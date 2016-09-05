@@ -43,7 +43,7 @@ function filterChapters(html){
 http.get(url,res=>{
 	var html='';
 	res.on('data',data=>html+=data);
-	res.on('end',function(){
+	res.on('end',()=>{
 		var courseData=filterChapters(html);
 		printCourseInfo(courseData);
 	});
